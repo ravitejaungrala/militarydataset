@@ -87,7 +87,7 @@ if uploaded_file is not None:
         plt.xlabel("Per 1000 capita (total)")
         plt.ylabel("Per 1000 capita (active)")
         st.pyplot()
-    if st.checkbox("Show scatter graph of Military expenditure vs Military personnel"):
+    if st.checkbox("SHOW SCATTER GRAPH OF PER 1000 CAPITA (ACTIVE) VS PER 1000 CAPITA (TOTAL)"):
         plt.figure(figsize=(10, 8))
         plt.scatter(data["Per 1000 capita (total)"], data["Per 1000 capita (active)"])
         plt.xlabel("Per 1000 capita (total)")
