@@ -96,10 +96,8 @@ if uploaded_file is not None:
     fill_type = st.radio("Select the fill type for null values:", options=["mean", "bfill", "ffill"])
     data['ffiiina'] = np.random.randint(1, 10, size=len(data))
     data['bfillna'] = data['Reserve military'].fillna(method='bfill')
-    if fill_type == "mean":
-        data.fillna(data.mean(), inplace=True)
-        st.write("Null values filled with mean values.")
-    elif fill_type == "bfill":
+    
+    if fill_type == "bfill":
         data.fillna(method='bfill', inplace=True)
         st.write("Null values filled with backward fill method.")
     elif fill_type == "ffill":
@@ -108,7 +106,7 @@ if uploaded_file is not None:
     # Sort data by a column and select top 25 rows
 
      # Correlation matrix
-    if st.checkbox("Show correlation matrix of Military Data"):
+    elif st.checkbox("Show correlation matrix of Military Data"):
         corr_matrix = data.corr()
         st.write(corr_matrix)
         plt.figure(figsize=(10, 8))
