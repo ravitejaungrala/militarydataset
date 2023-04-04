@@ -106,7 +106,7 @@ if uploaded_file is not None:
     # Sort data by a column and select top 25 rows
 
      # Correlation matrix
-    elif st.checkbox("Show correlation matrix of Military Data"):
+    if st.checkbox("Show correlation matrix of Military Data"):
         corr_matrix = data.corr()
         st.write(corr_matrix)
         plt.figure(figsize=(10, 8))
