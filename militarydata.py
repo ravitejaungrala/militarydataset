@@ -74,10 +74,7 @@ if uploaded_file is not None:
         st.pyplot()
 
     # Heatmap
-    if st.checkbox("Show heatmap of Military Data"):
-        plt.figure(figsize=(10, 8))
-        sns.heatmap(data.corr(), annot=True, cmap="coolwarm")
-        st.pyplot()
+    
     
   
     if st.checkbox("Show line graph of Military personnel by year"):
@@ -109,6 +106,10 @@ if uploaded_file is not None:
     if st.checkbox("Show correlation matrix of Military Data"):
         corr_matrix = data.corr()
         st.write(corr_matrix)
+       
+        plt.figure(figsize=(10, 8))
+        sns.heatmap(data.corr(), annot=True, cmap="coolwarm")
+        st.pyplot()
         
         st.pyplot()
 
