@@ -111,9 +111,9 @@ if uploaded_file is not None:
     if st.checkbox("Show correlation matrix of Military Data"):
         corr_matrix = data.corr()
         st.write(corr_matrix)
-        
         plt.figure(figsize=(10, 8))
         sns.heatmap(corr_matrix, annot=True, cmap="coolwarm")
         st.pyplot()
+
     
 
