@@ -87,7 +87,7 @@ if uploaded_file is not None:
         plt.xlabel("Per 1000 capita (total)")
         plt.ylabel("Per 1000 capita (active)")
         st.pyplot()
-    if st.checkbox("SHOW SCATTER GRAPH OF PER 1000 CAPITA (ACTIVE) VS PER 1000 CAPITA (TOTAL)"):
+    if st.checkbox("Show scatter graph of Military expenditure vs Military personnel"):
         plt.figure(figsize=(10, 8))
         plt.scatter(data["Per 1000 capita (total)"], data["Per 1000 capita (active)"])
         plt.xlabel("Per 1000 capita (total)")
@@ -96,8 +96,10 @@ if uploaded_file is not None:
     fill_type = st.radio("Select the fill type for null values:", options=["mean", "bfill", "ffill"])
     data['ffiiina'] = np.random.randint(1, 10, size=len(data))
     data['bfillna'] = data['Reserve military'].fillna(method='bfill')
-    
-    if fill_type == "bfill":
+    if fill_type == "mean":
+        data.fillna(data.mean(), inplace=True)
+        st.write("Null values filled with mean values.")
+    elif fill_type == "bfill":
         data.fillna(method='bfill', inplace=True)
         st.write("Null values filled with backward fill method.")
     elif fill_type == "ffill":
